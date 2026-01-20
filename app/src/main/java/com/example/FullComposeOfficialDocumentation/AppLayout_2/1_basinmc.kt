@@ -1,2 +1,0 @@
-package com.example.FullComposeOfficialDocumentation.AppLayout_2
-
