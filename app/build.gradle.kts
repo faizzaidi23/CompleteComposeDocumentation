@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.a1_composedocumentationuiarchitecture"
+    namespace = "com.example.FullComposeOfficialDocumentation"
     compileSdk = 35
 
     defaultConfig {
