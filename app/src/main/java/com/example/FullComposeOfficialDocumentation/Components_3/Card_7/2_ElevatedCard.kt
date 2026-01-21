@@ -9,18 +9,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 /*
-FILLED CARD
+ELEVATED CARD
 
-Material Design container for UI content
-Cards present a single coherent piece of content
-Filled card uses surface variant color by default
+Material Design elevated container for UI content
+Uses dedicated ElevatedCard composable
+Appears elevated above the background with shadow
+Default elevation creates visual hierarchy
 
 COMMON USE CASES:
-- Product in shopping app
-- News story in news app
-- Message in communications app
-- Profile information
-- Settings section
+- Featured content items
+- Interactive elements needing emphasis
+- Floating action containers
+- Important notifications
+- Highlighted product cards
 
 API SURFACE PARAMETERS:
 
@@ -34,25 +35,22 @@ API SURFACE PARAMETERS:
    Container and content colors
 
 4. elevation: CardElevation
-   Shadow depth in different states
+   Shadow depth in different states (key parameter for elevated cards)
 
-5. border: BorderStroke
-   Optional border around the card
-
-6. content: @Composable ColumnScope.() -> Unit
+5. content: @Composable ColumnScope.() -> Unit
    Card content (automatically in Column layout)
 */
 
 @Composable
-fun FilledCardBasicExample() {
-    Card(
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
+fun ElevatedCardBasicExample() {
+    ElevatedCard(
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 6.dp
         ),
         modifier = Modifier.size(width = 240.dp, height = 100.dp)
     ) {
         Text(
-            text = "Filled Card",
+            text = "Elevated",
             modifier = Modifier.padding(16.dp),
             textAlign = TextAlign.Center
         )
@@ -60,46 +58,43 @@ fun FilledCardBasicExample() {
 }
 
 @Composable
-fun FilledCardWithColorsExample() {
+fun ElevatedCardWithElevationExample() {
     Column(
         modifier = Modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                contentColor = MaterialTheme.colorScheme.onSurfaceVariant
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 2.dp
             ),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Default Surface Variant",
+                text = "Low Elevation (2dp)",
                 modifier = Modifier.padding(16.dp)
             )
         }
 
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
             ),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Primary Container",
+                text = "Medium Elevation (6dp)",
                 modifier = Modifier.padding(16.dp)
             )
         }
 
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFE3F2FD),
-                contentColor = Color(0xFF0D47A1)
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 12.dp
             ),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Custom Blue Container",
+                text = "High Elevation (12dp)",
                 modifier = Modifier.padding(16.dp)
             )
         }
@@ -107,22 +102,80 @@ fun FilledCardWithColorsExample() {
 }
 
 /*
-CardColors type:
-- containerColor: Card background color
-- contentColor: Default color for content inside
-- disabledContainerColor: Background when disabled
-- disabledContentColor: Content color when disabled
+CardElevation type:
+- defaultElevation: Elevation in default state
+- pressedElevation: Elevation when pressed (for clickable cards)
+- focusedElevation: Elevation when focused
+- hoveredElevation: Elevation when hovered
+- draggedElevation: Elevation when dragged
+- disabledElevation: Elevation when disabled
 */
 
 @Composable
-fun FilledCardWithShapeExample() {
+fun ElevatedCardWithColorsExample() {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            ),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.onSurface
+            ),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Default Surface Color",
+                modifier = Modifier.padding(16.dp)
+            )
+        }
+
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            ),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            ),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Primary Container Color",
+                modifier = Modifier.padding(16.dp)
+            )
+        }
+
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            ),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(0xFFFFF3E0),
+                contentColor = Color(0xFFE65100)
+            ),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Custom Orange Container",
+                modifier = Modifier.padding(16.dp)
+            )
+        }
+    }
+}
+
+@Composable
+fun ElevatedCardWithShapeExample() {
     Row(
         modifier = Modifier.padding(16.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
             ),
             modifier = Modifier.size(100.dp)
         ) {
@@ -136,9 +189,9 @@ fun FilledCardWithShapeExample() {
             }
         }
 
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
             ),
             shape = androidx.compose.foundation.shape.RoundedCornerShape(24.dp),
             modifier = Modifier.size(100.dp)
@@ -153,9 +206,9 @@ fun FilledCardWithShapeExample() {
             }
         }
 
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
             ),
             shape = androidx.compose.foundation.shape.CircleShape,
             modifier = Modifier.size(100.dp)
@@ -172,22 +225,15 @@ fun FilledCardWithShapeExample() {
     }
 }
 
-/*
-shape parameter:
-Default is MaterialTheme.shapes.medium
-Can use RoundedCornerShape for custom radius
-CircleShape for circular cards
-CutCornerShape for cut corners
-*/
-
 @Composable
-fun FilledCardClickableExample() {
+fun ElevatedCardClickableExample() {
     var clickCount by remember { mutableStateOf(0) }
 
-    Card(
+    ElevatedCard(
         onClick = { clickCount++ },
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 6.dp,
+            pressedElevation = 2.dp
         ),
         modifier = Modifier
             .fillMaxWidth()
@@ -195,35 +241,40 @@ fun FilledCardClickableExample() {
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                "Clickable Card",
+                "Clickable Elevated Card",
                 style = MaterialTheme.typography.titleMedium
             )
             Text("Clicked $clickCount times")
+            Text(
+                "Elevation changes on press",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }
 
 /*
-onClick overload:
-Makes entire card clickable
-Provides ripple effect feedback
-Use for interactive cards (navigation, selection)
-Different from standard Card composable
+Clickable elevated cards can have different elevation states:
+- defaultElevation: Normal state
+- pressedElevation: When user presses (typically lower)
+- Creates interactive feedback through elevation change
 */
 
 @Composable
-fun FilledCardWithEnabledExample() {
+fun ElevatedCardWithEnabledExample() {
     var isEnabled by remember { mutableStateOf(true) }
 
     Column(
         modifier = Modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Card(
+        ElevatedCard(
             onClick = { /* action */ },
             enabled = isEnabled,
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp,
+                disabledElevation = 0.dp
             ),
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -239,30 +290,26 @@ fun FilledCardWithEnabledExample() {
     }
 }
 
-/*
-enabled parameter:
-Only works with onClick overload
-When false, card appears faded
-Does not respond to clicks
-Useful for conditional interactions
-*/
-
 @Composable
-fun FilledCardCompleteExample() {
+fun ElevatedCardCompleteExample() {
     var isSelected by remember { mutableStateOf(false) }
 
-    Card(
+    ElevatedCard(
         onClick = { isSelected = !isSelected },
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = if (isSelected) 12.dp else 6.dp,
+            pressedElevation = 2.dp
+        ),
         colors = CardDefaults.cardColors(
             containerColor = if (isSelected) {
                 MaterialTheme.colorScheme.primaryContainer
             } else {
-                MaterialTheme.colorScheme.surfaceVariant
+                MaterialTheme.colorScheme.surface
             },
             contentColor = if (isSelected) {
                 MaterialTheme.colorScheme.onPrimaryContainer
             } else {
-                MaterialTheme.colorScheme.onSurfaceVariant
+                MaterialTheme.colorScheme.onSurface
             }
         ),
         modifier = Modifier
@@ -274,15 +321,15 @@ fun FilledCardCompleteExample() {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                "Product Card",
+                "Featured Product",
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                "Click to select",
+                "Click to select this item",
                 style = MaterialTheme.typography.bodyMedium
             )
             Text(
-                if (isSelected) "Selected" else "Not selected",
+                if (isSelected) "Selected - Higher elevation" else "Not selected",
                 style = MaterialTheme.typography.labelSmall
             )
         }
@@ -290,21 +337,15 @@ fun FilledCardCompleteExample() {
 }
 
 /*
-CARD CONTENT LAYOUT:
-
-Card uses ColumnScope by default
-Content placed vertically
-Items stack top to bottom
-Use Row inside for horizontal layout
-Use Box for custom positioning
-
 BEST PRACTICES:
 
-Use for cohesive content pieces
-Keep content focused and related
-Don't nest cards deeply
-Use appropriate color contrast
-Consider elevation for hierarchy
-Make clickable cards obvious
-Provide visual feedback on interaction
+Use elevation to establish visual hierarchy
+Higher elevation = more important or active
+Keep elevation values consistent across app
+Use pressed elevation for tactile feedback
+Default elevations: 1dp, 2dp, 4dp, 6dp, 8dp, 12dp, 16dp, 24dp
+Avoid excessive elevation (creates heavy shadows)
+Consider accessibility in low contrast environments
+Elevation creates depth perception in UI
 */
+
