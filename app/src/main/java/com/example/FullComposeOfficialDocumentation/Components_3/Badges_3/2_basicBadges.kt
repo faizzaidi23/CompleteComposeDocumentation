@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 /*
@@ -96,6 +97,42 @@ fun BadgeWithNumberExample() {
                 contentDescription = "Notifications"
             )
         }
+    }
+}
+
+
+//Detailed example of badges
+
+@Composable
+fun BadgeInteractiveExample(){
+    var itemCount by remember{mutableIntStateOf(0)}
+
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ){
+
+        BadgedBox(
+            badge={
+                if(itemCount>0){
+                    Badge(
+                        containerColor=Color.Red,
+                        contentColor = Color.White
+                    ){
+                        Text("$itemCount")
+                    }
+                }
+            }
+        ){
+          Icon(imageVector = Icons.Filled.ShoppingCart,
+              contentDescription = "Shopping cart")
+        }
+
+        Button(
+            onClick = {itemCount++}
+        ){
+            Text("Add an Item")
+        }
+
     }
 }
 
