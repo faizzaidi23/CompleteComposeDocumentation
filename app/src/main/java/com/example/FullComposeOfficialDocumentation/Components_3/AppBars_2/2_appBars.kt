@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Components_3
+package com.example.FullComposeOfficialDocumentation.Components_3.AppBars_2
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable

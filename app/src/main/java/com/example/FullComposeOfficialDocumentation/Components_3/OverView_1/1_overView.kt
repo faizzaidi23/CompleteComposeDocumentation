@@ -1,17 +1,20 @@
-package com.example.FullComposeOfficialDocumentation.Components_3
+package com.example.FullComposeOfficialDocumentation.Components_3.OverView_1
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.state.ToggleableState
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 
 /*
 ═══════════════════════════════════════════════════════════════════════════════
@@ -1083,9 +1086,9 @@ fun TextFieldExamples() {
             onValueChange = { password = it },
             label = { Text("Password") },
             visualTransformation = if (passwordVisible)
-                androidx.compose.ui.text.input.VisualTransformation.None
+                VisualTransformation.None
             else
-                androidx.compose.ui.text.input.PasswordVisualTransformation(),
+                PasswordVisualTransformation(),
             trailingIcon = {
                 IconButton(onClick = { passwordVisible = !passwordVisible }) {
                     Icon(
@@ -1174,4 +1177,3 @@ fun TextFieldExamples() {
     - Extract static content outside of composables
 
 ═══════════════════════════════════════════════════════════════════════════════
-*/
