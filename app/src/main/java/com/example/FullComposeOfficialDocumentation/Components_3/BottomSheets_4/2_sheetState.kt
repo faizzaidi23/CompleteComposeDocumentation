@@ -87,22 +87,22 @@ WHAT sheetState DOES:
 - Provides show()/hide() functions
 
 WITHOUT sheetState, the sheet would:
-❌ Appear/disappear abruptly (no animation)
-❌ Have no drag gestures (can't swipe to dismiss)
-❌ No smooth transitions
-❌ No Material Design behavior
+ Appear/disappear abruptly (no animation)
+ Have no drag gestures (can't swipe to dismiss)
+ No smooth transitions
+ No Material Design behavior
 
 WITH sheetState:
-✅ Smooth slide-in/out animations
-✅ User can swipe down to dismiss
-✅ Proper Material Design motion
-✅ Programmatic control over animations
+ Smooth slide-in/out animations
+ User can swipe down to dismiss
+ Proper Material Design motion
+ Programmatic control over animations
 */
 
 /*
-═══════════════════════════════════════════════════════════════════════════════
+
                           MENTAL MODEL
-═══════════════════════════════════════════════════════════════════════════════
+
 
 REAL-WORLD ANALOGY:
 
@@ -190,7 +190,7 @@ var showBottomSheet by remember { mutableStateOf(false) }
 if (showBottomSheet) {
     ModalBottomSheet(
         onDismissRequest = { showBottomSheet = false }
-        // ❌ ERROR: Missing required parameter 'sheetState'
+        //  ERROR: Missing required parameter 'sheetState'
     ) {
         // Content
     }
@@ -211,7 +211,7 @@ var showBottomSheet by remember { mutableStateOf(false) }
 if (showBottomSheet) {
     ModalBottomSheet(
         onDismissRequest = { showBottomSheet = false },
-        sheetState = sheetState  // ✅ Provides animation & gesture control
+        sheetState = sheetState  //  Provides animation & gesture control
     ) {
         // Content
     }
@@ -293,15 +293,15 @@ sheetState is the ANIMATION + GESTURE + VISIBILITY CONTROLLER
 It's NOT optional - it's REQUIRED for ModalBottomSheet to work properly
 
 It provides:
-✅ Smooth animations
-✅ Swipe gestures
-✅ Programmatic control (show/hide)
-✅ Material Design behavior
+ Smooth animations
+ Swipe gestures
+ Programmatic control (show/hide)
+ Material Design behavior
 
 Without it:
-❌ No compilation (required parameter)
-❌ No animations
-❌ No gestures
-❌ Poor user experience
+ No compilation (required parameter)
+ No animations
+ No gestures
+ Poor user experience
 */
 

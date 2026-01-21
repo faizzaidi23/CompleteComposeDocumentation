@@ -581,6 +581,5 @@ BEST PRACTICES SHOWN:
     ✓ Swipe-to-dismiss support
     ✓ Tap outside to dismiss
 
-═══════════════════════════════════════════════════════════════════════════════
 */
 
