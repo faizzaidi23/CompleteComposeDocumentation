@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/FullComposeOfficialDocumentation/Components_3/Chip_10/7_ElevatedFilterChip.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/src/main/java/com/example/FullComposeOfficialDocumentation/Components_3/Chip_10/7_ElevatedFilterChip.kt" />
+              <option name="updatedContent" value="package com.example.FullComposeOfficialDocumentation.Components_3.Chip_10&#10;&#10;import androidx.compose.foundation.layout.size&#10;import androidx.compose.material.icons.Icons&#10;import androidx.compose.material.icons.filled.Done&#10;import androidx.compose.material3.ElevatedFilterChip&#10;import androidx.compose.material3.FilterChipDefaults&#10;import androidx.compose.material3.Icon&#10;import androidx.compose.material3.Text&#10;import androidx.compose.runtime.Composable&#10;import androidx.compose.runtime.mutableStateOf&#10;import androidx.compose.runtime.remember&#10;import androidx.compose.runtime.getValue&#10;import androidx.compose.runtime.setValue&#10;import androidx.compose.ui.Modifier&#10;&#10;@Composable&#10;fun ElevatedFilterChipExample(){&#10;    var selected by remember{ mutableStateOf(false) }&#10;&#10;    ElevatedFilterChip(&#10;        onClick = {selected=!selected},&#10;        label={Text(&quot;Elevated Filter Chip&quot;)},&#10;        selected = selected,&#10;        leadingIcon =if(selected) {&#10;            {&#10;                Icon(&#10;                    imageVector = Icons.Filled.Done,&#10;                    contentDescription = &quot;Done Icon&quot;,&#10;                    modifier=Modifier.size(FilterChipDefaults.IconSize)&#10;                )&#10;            }&#10;        }else{&#10;           null&#10;        },&#10;    )&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
