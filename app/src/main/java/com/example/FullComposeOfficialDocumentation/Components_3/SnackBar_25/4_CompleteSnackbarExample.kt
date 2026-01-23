@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -68,7 +68,7 @@ fun CompleteSnackbarExample() {
         floatingActionButton = {
             ExtendedFloatingActionButton(
                 text = { Text("Submit Form") },
-                icon = { Icon(Icons.Filled.Send, contentDescription = null) },
+                icon = { Icon(Icons.AutoMirrored.Filled.Send, contentDescription = null) },
                 onClick = {
                     scope.launch {
                         // Show snackbar with all options
@@ -106,4 +106,3 @@ fun CompleteSnackbarExample() {
         }
     }
 }
-
