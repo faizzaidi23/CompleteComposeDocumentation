@@ -28,7 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun RadioButtonSingleSelection(modifier: Modifier = Modifier) {
+fun RadioButtoonSingleSelection(modifier: Modifier = Modifier) {
     val radioOptions = listOf("Calls", "Missed", "Friends")
 
 }
