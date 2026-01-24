@@ -2,7 +2,8 @@ package com.example.FullComposeOfficialDocumentation.Components_3.ToolTip_29
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Camera
+import androidx.compose.material.icons.filled.Email
+//import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -92,10 +93,9 @@ fun AdvancedRichTooltipExample(
             }
         }) {
             Icon(
-                imageVector = Icons.Filled.Camera,
+                imageVector = Icons.Filled.Email,
                 contentDescription = "Open camera"
             )
         }
     }
 }
-
