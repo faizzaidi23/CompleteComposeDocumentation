@@ -24,6 +24,34 @@ A list of SpanStyleRange equivalent to inline styling with position range within
 we use SpanStyle and ParagraphStyle to use in AnnotatedString
 */
 
+/*
+Span style styles the characters
+without paragraphStyle-->
+if we use SpanStyle like this we are using below
+
+
+we can control-->
+Color
+Font Size
+Font Weight
+Font Style
+Background
+Letter Spacing
+Text decoration
+
+
+But we can not control--->
+
+Line Height
+Text alignment per paragraph
+Indentation
+Text direction
+Hyphenation
+
+
+Without paragraph style All lines will follow the default TextStyle layout behavior
+*/
+
 
 
 @Composable
