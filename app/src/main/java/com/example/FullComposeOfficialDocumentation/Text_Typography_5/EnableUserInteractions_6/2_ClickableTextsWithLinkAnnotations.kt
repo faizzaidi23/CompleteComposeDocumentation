@@ -34,6 +34,8 @@ fun AnnotatedStringWithLinkSample(){
                     "https://developer.android.com/",
                     TextLinkStyles(style= SpanStyle(color=Color.Blue))
                 )
+                //Here we are looking at LinkAnnotations.Url without a lambda body-->Compose uses the default behavior
+                //But the default one is having the body
             ){
                 append("Android developers")
             }
