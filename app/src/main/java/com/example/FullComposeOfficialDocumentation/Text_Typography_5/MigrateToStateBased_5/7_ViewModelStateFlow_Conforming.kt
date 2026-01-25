@@ -1,19 +1,15 @@
-package com.example.FullComposeOfficialDocumentation.Text_Typography_5.MigrateToStateBased_9
+package com.example.FullComposeOfficialDocumentation.Text_Typography_5.MigrateToStateBased_5
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 
 /*
