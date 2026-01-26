@@ -42,6 +42,8 @@ android {
 
 dependencies {
 
+    // Graphics Shapes library for custom polygons
+    implementation("androidx.graphics:graphics-shapes:1.0.0-beta01")
 
     implementation("androidx.compose.runtime:runtime-livedata:1.6.7")
 
