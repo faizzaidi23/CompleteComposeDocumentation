@@ -57,6 +57,9 @@ dependencies {
 
     implementation("com.google.accompanist:accompanist-navigation-material:0.34.0")
 
+    // Coil for image loading from internet
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
