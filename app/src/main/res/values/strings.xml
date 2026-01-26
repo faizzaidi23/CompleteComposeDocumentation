@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">1-compose documentation UI architecture</string>
+    <string name="dog_content_description">A cute brown dog</string>
 </resources>
