@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.drawscope.translate
@@ -72,7 +73,7 @@ fun MultipleTransformationsExample() {
             drawRect(
                 color = Color.Blue,
                 topLeft = Offset(-50.dp.toPx(), -50.dp.toPx()),
-                size = androidx.compose.ui.geometry.Size(100.dp.toPx(), 100.dp.toPx())
+                size = Size(100.dp.toPx(), 100.dp.toPx())
             )
         }
     }
@@ -205,7 +206,7 @@ fun FlowerPatternExample() {
                 drawOval(
                     color = Color(0xFFFF6B9D),
                     topLeft = Offset(-20.dp.toPx(), -60.dp.toPx()),
-                    size = androidx.compose.ui.geometry.Size(40.dp.toPx(), 80.dp.toPx())
+                    size = Size(40.dp.toPx(), 80.dp.toPx())
                 )
             }
         }

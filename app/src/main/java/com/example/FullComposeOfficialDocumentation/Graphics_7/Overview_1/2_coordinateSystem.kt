@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement

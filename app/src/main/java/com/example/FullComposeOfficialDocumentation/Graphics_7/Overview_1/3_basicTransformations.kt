@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.inset
 import androidx.compose.ui.graphics.drawscope.rotate
@@ -128,7 +129,7 @@ fun TranslateToCenterExample() {
         ) {
             drawRect(
                 color = Color.Magenta,
-                size = androidx.compose.ui.geometry.Size(rectSize, rectSize)
+                size = Size(rectSize, rectSize)
             )
         }
     }
@@ -211,7 +212,7 @@ fun RotatePinwheelExample() {
                 drawRect(
                     color = Color.Red,
                     topLeft = Offset(center.x, center.y - 80.dp.toPx()),
-                    size = androidx.compose.ui.geometry.Size(40.dp.toPx(), 80.dp.toPx())
+                    size = Size(40.dp.toPx(), 80.dp.toPx())
                 )
             }
         }

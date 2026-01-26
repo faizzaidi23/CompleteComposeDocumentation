@@ -1,5 +1,9 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Paint
+import android.graphics.Shader
 import android.graphics.drawable.shapes.OvalShape
 import android.graphics.drawable.ShapeDrawable
 import androidx.compose.foundation.Canvas
@@ -70,7 +74,7 @@ then drawn on the native canvas
 @Composable
 fun DrawCustomDrawableExample() {
     val drawable = ShapeDrawable(OvalShape()).apply {
-        paint.color = android.graphics.Color.BLUE
+        paint.color = Color.BLUE
     }
 
     Canvas(modifier = Modifier.size(200.dp)) {
@@ -106,10 +110,10 @@ fun NativeCanvasExample() {
             val nativeCanvas = canvas.nativeCanvas
 
             /* Use native Canvas methods */
-            val paint = android.graphics.Paint().apply {
-                color = android.graphics.Color.RED
+            val paint = Paint().apply {
+                color = Color.RED
                 strokeWidth = 5f
-                style = android.graphics.Paint.Style.STROKE
+                style = Paint.Style.STROKE
             }
 
             nativeCanvas.drawCircle(
@@ -139,10 +143,10 @@ fun MixedDrawingExample() {
 
         /* Use native Canvas methods */
         drawIntoCanvas { canvas ->
-            val paint = android.graphics.Paint().apply {
-                color = android.graphics.Color.BLUE
+            val paint = Paint().apply {
+                color = Color.BLUE
                 textSize = 40f
-                textAlign = android.graphics.Paint.Align.CENTER
+                textAlign = Paint.Align.CENTER
             }
 
             canvas.nativeCanvas.drawText(
@@ -167,15 +171,15 @@ fun MultipleDrawablesExample() {
         drawIntoCanvas { canvas ->
             /* Create different colored drawables */
             val redDrawable = ShapeDrawable(OvalShape()).apply {
-                paint.color = android.graphics.Color.RED
+                paint.color = Color.RED
             }
 
             val greenDrawable = ShapeDrawable(OvalShape()).apply {
-                paint.color = android.graphics.Color.GREEN
+                paint.color = Color.GREEN
             }
 
             val blueDrawable = ShapeDrawable(OvalShape()).apply {
-                paint.color = android.graphics.Color.BLUE
+                paint.color = Color.BLUE
             }
 
             /* Draw them at different positions */
@@ -211,13 +215,13 @@ This shows how to use native Paint with gradients
 fun NativeGradientExample() {
     Canvas(modifier = Modifier.size(200.dp)) {
         drawIntoCanvas { canvas ->
-            val paint = android.graphics.Paint().apply {
-                shader = android.graphics.LinearGradient(
+            val paint = Paint().apply {
+                Paint.setShader = LinearGradient(
                     0f, 0f,
                     size.width, size.height,
-                    android.graphics.Color.MAGENTA,
-                    android.graphics.Color.CYAN,
-                    android.graphics.Shader.TileMode.CLAMP
+                    Color.MAGENTA,
+                    Color.CYAN,
+                    Shader.TileMode.CLAMP
                 )
             }
 

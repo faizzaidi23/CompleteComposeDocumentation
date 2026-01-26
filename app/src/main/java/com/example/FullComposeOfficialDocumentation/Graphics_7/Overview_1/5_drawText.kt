@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
@@ -214,14 +215,14 @@ fun MultipleTextsExample() {
         drawText(
             textMeasurer = textMeasurer,
             text = "Top Left",
-            topLeft = androidx.compose.ui.geometry.Offset(0f, 0f),
+            topLeft = Offset(0f, 0f),
             style = TextStyle(fontSize = 16.sp, color = Color.Red)
         )
 
         drawText(
             textMeasurer = textMeasurer,
             text = "Center",
-            topLeft = androidx.compose.ui.geometry.Offset(
+            topLeft = Offset(
                 size.width / 2 - 30.dp.toPx(),
                 size.height / 2
             ),
@@ -231,7 +232,7 @@ fun MultipleTextsExample() {
         drawText(
             textMeasurer = textMeasurer,
             text = "Bottom Right",
-            topLeft = androidx.compose.ui.geometry.Offset(
+            topLeft = Offset(
                 size.width - 100.dp.toPx(),
                 size.height - 40.dp.toPx()
             ),
@@ -270,9 +271,9 @@ fun TextStylingExample() {
                 )
 
                 onDrawBehind {
-                    drawText(normalText, topLeft = androidx.compose.ui.geometry.Offset(0f, 0f))
-                    drawText(boldText, topLeft = androidx.compose.ui.geometry.Offset(0f, 50.dp.toPx()))
-                    drawText(largeText, topLeft = androidx.compose.ui.geometry.Offset(0f, 100.dp.toPx()))
+                    drawText(normalText, topLeft = Offset(0f, 0f))
+                    drawText(boldText, topLeft = Offset(0f, 50.dp.toPx()))
+                    drawText(largeText, topLeft = Offset(0f, 100.dp.toPx()))
                 }
             }
     )

@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Fill
@@ -21,6 +22,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.math.cos
+import kotlin.math.sin
 
 /*
 DRAW PATH
@@ -104,8 +107,8 @@ fun DrawStarExample() {
             for (i in 0 until 10) {
                 val angle = (i * 36 - 90) * (Math.PI / 180).toFloat()
                 val radius = if (i % 2 == 0) outerRadius else innerRadius
-                val x = centerX + radius * kotlin.math.cos(angle)
-                val y = centerY + radius * kotlin.math.sin(angle)
+                val x = centerX + radius * cos(angle)
+                val y = centerY + radius * sin(angle)
 
                 if (i == 0) moveTo(x, y) else lineTo(x, y)
             }
@@ -233,8 +236,8 @@ fun DrawHexagonExample() {
 
             for (i in 0 until sides) {
                 val angle = (i * 60 - 90) * (Math.PI / 180).toFloat()
-                val x = centerX + radius * kotlin.math.cos(angle)
-                val y = centerY + radius * kotlin.math.sin(angle)
+                val x = centerX + radius * cos(angle)
+                val y = centerY + radius * sin(angle)
 
                 if (i == 0) moveTo(x, y) else lineTo(x, y)
             }
@@ -281,7 +284,7 @@ fun DrawFilledAndStrokedExample() {
     Canvas(modifier = Modifier.size(200.dp)) {
         val path = Path().apply {
             addOval(
-                androidx.compose.ui.geometry.Rect(
+                Rect(
                     left = 40.dp.toPx(),
                     top = 40.dp.toPx(),
                     right = 160.dp.toPx(),

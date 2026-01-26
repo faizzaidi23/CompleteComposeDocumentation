@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Graphics_7
+package com.example.FullComposeOfficialDocumentation.Graphics_7.Overview_1
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
@@ -210,7 +211,9 @@ fun ImageWithTransformExample() {
     val dogImage = ImageBitmap.imageResource(id = R.drawable.dog)
 
     Canvas(modifier = Modifier.size(300.dp)) {
-        rotate(degrees = 45f, pivot = Offset(size.width / 2, size.height / 2)) {
+        withTransform({
+            rotate(degrees = 45f, pivot = Offset(size.width / 2, size.height / 2))
+        }) {
             drawImage(
                 image = dogImage,
                 dstOffset = IntOffset(
@@ -276,4 +279,3 @@ fun AllDrawImageExamples() {
         ImageWithTransformExample()
     }
 }
-
