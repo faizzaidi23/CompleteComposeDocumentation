@@ -82,9 +82,11 @@ fun CombinedClickableArticleRow(
 }
 
 /*
+
 In some cases, you may not have direct access to the clickable modifier, but still want to change
 the announcement label. You can use the semantics modifier to modify the action representation.
 The merging logic verifies that the outermost modifier label is taken.
+
 */
 @Composable
 fun ArticleListWithSemantics(openArticle: () -> Unit) {
