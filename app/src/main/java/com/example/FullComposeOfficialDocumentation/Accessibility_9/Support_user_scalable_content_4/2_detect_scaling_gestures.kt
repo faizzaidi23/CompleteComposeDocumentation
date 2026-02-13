@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Accessibility_9.Support_user_scalable_content
+package com.example.FullComposeOfficialDocumentation.Accessibility_9.Support_user_scalable_content_4
 
 /*
 DETECTING SCALING GESTURES IN JETPACK COMPOSE

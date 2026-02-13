@@ -1,4 +1,4 @@
-package com.example.FullComposeOfficialDocumentation.Accessibility_9.Support_user_scalable_content
+package com.example.FullComposeOfficialDocumentation.Accessibility_9.Support_user_scalable_content_4
 
 /*
 Implementing pinch-to-zoom gestures to support scalable content in the app.
