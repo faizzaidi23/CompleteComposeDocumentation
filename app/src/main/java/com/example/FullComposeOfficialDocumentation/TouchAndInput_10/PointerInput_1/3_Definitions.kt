@@ -9,9 +9,7 @@ DEFINITIONS - KEY TERMINOLOGY FOR GESTURE HANDLING
 To understand the various concepts in gesture handling, you need to understand
 some of the terminology used:
 
-═══════════════════════════════════════════════════════════════════════════════
 1. POINTER
-═══════════════════════════════════════════════════════════════════════════════
 
 DEFINITION:
 A physical object you can use to interact with your application.

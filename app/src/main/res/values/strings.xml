@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="dog_content_description">A cute brown dog</string>
+    <string name="open_context_menu">Open context menu</string>
+    <string name="close">Close</string>
 </resources>
